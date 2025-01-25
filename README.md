@@ -1,4 +1,4 @@
-# Memory Game - Magic Match
+# Memory Game - Big Brain Time
 
 ## Description
 Big Brain Time is a fun and interactive memory game built with React. The goal is to match pairs of cards as quickly and efficiently as possible. The game features customizable settings, including the number of cards, background colors, and a game history to track past performances.
