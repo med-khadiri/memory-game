@@ -1,0 +1,229 @@
+.App {
+  max-width: 860px;
+  margin: 40px auto;
+  text-align: center;
+  padding: 20px;
+  border-radius: 8px;
+}
+
+button {
+  background: none;
+  border: 2px solid #fff;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: #fff;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 1em;
+  margin-right: 10px;
+}
+button:hover {
+  background: #c23866;
+  color: #fff;
+}
+
+.card-grid {
+  margin: 40px auto;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  justify-content: center;
+  max-width: 600px;
+  width: 100%;
+}
+
+/* Animation pour flipped cards */
+.card-grid.winning .card {
+  animation: flip 0.8s ease-out forwards;
+}
+
+@keyframes flip {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(90deg);
+  }
+  100% {
+    transform: rotateY(180deg);
+  }
+}
+
+.settings {
+  margin-bottom: 20px;
+}
+
+.settings label {
+  display: block;
+  margin: 10px 0;
+  font-size: 1em;
+  color: #fff;
+}
+
+select {
+  margin-left: 10px;
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+/* Style pour la table du game history  */
+.game-history {
+  margin-top: 20px;
+}
+
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 20px 0;
+}
+
+.history-table th, .history-table td {
+  padding: 12px 20px;
+  text-align: center;
+  border: 1px solid #ddd;
+  font-size: 30px;
+}
+
+
+.history-table th, .Games{
+  font-weight: bold;
+  font-size: 35px;
+}
+
+.history-table th:hover, .Games:hover {
+  background: #c23866;
+  color: #fff;
+}
+
+
+.history-table tr:hover {
+  cursor: pointer;
+}
+.settings-icon {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: #fff;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.settings-dropdown {
+  position: absolute;
+  top: 60px;
+  right: 20px;
+  background: rgba(0, 0, 0, 0.8);
+  color: #fff;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+}
+
+.settings-dropdown label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.settings-dropdown select {
+  padding: 5px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+/* Style du conteneur select */
+.settings-dropdown select {
+  appearance: none; /* Supprime l'apparence native */
+  background: linear-gradient(135deg, #2c2c54, #ff6b6b); /* Dégradé de fond */
+  color: #fff; /* Couleur du texte */
+  border: 2px solid #fff; /* Bordure blanche */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 8px 12px; /* Espacement interne */
+  cursor: pointer; /* Curseur pointeur */
+  transition: all 0.3s ease-in-out; /* Animation pour hover */
+}
+
+/* Ajout d'une flèche personnalisée */
+.settings-dropdown select::after {
+  content: "▼"; /* Flèche */
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Effet au survol */
+.settings-dropdown select:hover {
+  background: linear-gradient(135deg, #ff6b6b, #2ed573); /* Changement de couleur */
+  border-color: #c23866; /* Couleur de bordure */
+}
+
+/* Focus (lorsque le champ est sélectionné) */
+.settings-dropdown select:focus {
+  outline: none; /* Supprime la bordure bleue native */
+  box-shadow: 0 0 8px rgba(255, 107, 107, 0.8); /* Effet lumineux */
+}
+
+/* Style des options */
+.settings-dropdown option {
+  background: #2c2c54; /* Fond des options */
+  color: #fff; /* Texte blanc */
+  padding: 8px; /* Espacement interne */
+}
+
+/* Option sélectionnée */
+.settings-dropdown select option:checked {
+  background: #ff6b6b; /* Fond de l'option sélectionnée */
+  color: #fff; /* Texte blanc */
+}
+/* Conteneur pour la sélection du nombre de cartes */
+.cards-dropdown select {
+  appearance: none; /* Supprime l'apparence native */
+  background: linear-gradient(135deg, #1e90ff, #989090); /* Dégradé de fond */
+  color: #fff; /* Couleur du texte */
+  border: 2px solid #fff; /* Bordure blanche */
+  border-radius: 8px; /* Coins arrondis */
+  padding: 8px 12px; /* Espacement interne */
+  cursor: pointer; /* Curseur pointeur */
+  transition: all 0.3s ease-in-out; /* Animation pour hover */
+}
+
+/* Ajout d'une flèche personnalisée */
+.cards-dropdown select::after {
+  content: "▼"; /* Flèche */
+  position: absolute;
+  right: 10px;
+  pointer-events: none;
+  font-size: 12px;
+  color: #fff;
+}
+
+/* Effet au survol */
+.cards-dropdown select:hover {
+  background: linear-gradient(135deg, #83d722, #ff6b6b); /* Changement de couleur */
+  border-color: #ff6b6b; /* Couleur de bordure */
+}
+
+/* Focus (lorsque le champ est sélectionné) */
+.cards-dropdown select:focus {
+  outline: none; /* Supprime la bordure bleue native */
+  box-shadow: 0 0 8px rgba(255, 165, 2, 0.8); /* Effet lumineux */
+}
+
+/* Style des options */
+.cards-dropdown option {
+  background: #1e90ff; /* Fond des options */
+  color: #fff; /* Texte blanc */
+  padding: 8px; /* Espacement interne */
+}
+
+/* Option sélectionnée */
+.cards-dropdown select option:checked {
+  background: #ffa502; /* Fond de l'option sélectionnée */
+  color: #fff; /* Texte blanc */
+}
+
+/*bgcolor*/
+
+

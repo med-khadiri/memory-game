@@ -1,0 +1,54 @@
+.card {
+    position: relative;
+    width: 140px;
+    height: 140px;
+    perspective: 1000px;
+}
+
+.card img {
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    display: block;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+/* Style et animation du flip de la face avant et de la face arrière du cards */
+.card .front,
+.card .back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden; /* Masque la face arrière lors du flip */
+    border-radius: 8px;
+    box-sizing: border-box;
+    overflow: hidden; /* Empêche les débordements visuels */
+}
+
+.card .front {
+    transform: rotateY(180deg);
+    background: #fff;
+    border: 2px solid #c23866;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.card .back {
+    transform: rotateY(0deg);
+    background: #fff;
+    border: 2px solid #c23866;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: transform 0.5s ease;
+}
+
+.flipped .front {
+    transform: rotateY(0deg);
+}
+
+.flipped .back {
+    transform: rotateY(180deg);
+}
